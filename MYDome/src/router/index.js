@@ -19,6 +19,8 @@ import TestInstructions from '../pages/TestInstructions/index.vue'
 import FlowPath from '../pages/FlowPath/index.vue'
 // 考试流程详情
 import FlowPathDetail from '../pages/FlowPath/FlowPathDetail/index.vue'
+// 联系我们
+import ContactUs from '../pages/ContactUs/index.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -74,6 +76,11 @@ export default new Router({
       path: '/FlowPathDetail',
       name: 'FlowPathDetail',
       component: FlowPathDetail
+    },
+    {
+      path: '/ContactUs',
+      name: 'ContactUs',
+      component: ContactUs
     }
   ]
 })

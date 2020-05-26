@@ -14,7 +14,8 @@ export default {
       lis: [
         { name: "音乐资讯", url: "information" },
         { name: "考试须知", url: "TestInstructions" },
-        { name: "考试流程", url: "FlowPath" }
+        { name: "考试流程", url: "FlowPath" },
+        {name:"联系我们",url:"ContactUs"}
       ]
     };
   },
