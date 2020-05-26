@@ -194,6 +194,7 @@ export default {
       margin-top: 3vw;
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
       align-items: center;
       padding-left: 5vw;
       img {
