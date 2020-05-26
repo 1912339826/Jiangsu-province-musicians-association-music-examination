@@ -17,6 +17,8 @@ import informationDetail from '../pages/information/informationDetail/index.vue'
 import TestInstructions from '../pages/TestInstructions/index.vue'
 // 考试流程
 import FlowPath from '../pages/FlowPath/index.vue'
+// 考试流程详情
+import FlowPathDetail from '../pages/FlowPath/FlowPathDetail/index.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -67,6 +69,11 @@ export default new Router({
       path: '/informationDetail',
       name: 'informationDetail',
       component: informationDetail
+    },
+    {
+      path: '/FlowPathDetail',
+      name: 'FlowPathDetail',
+      component: FlowPathDetail
     }
   ]
 })

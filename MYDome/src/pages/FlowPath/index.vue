@@ -25,7 +25,7 @@
           <div class="side">
             <div class="top">{{example[0].title}}</div>
             <pre>{{example[0].content}}</pre>
-            <div class="button">查看详情</div>
+            <div class="button" @click="details(example[0].id)">查看详情</div>
           </div>
         </div>
         <img src="../../../static/images/考试流程(完整)1_03.png" alt />
@@ -33,31 +33,31 @@
           <div class="side">
             <div class="top">{{example[1].title}}</div>
             <pre>{{example[1].content}}</pre>
-            <div class="button">查看详情</div>
+            <div class="button" @click="details(example[1].id)">查看详情</div>
           </div>
           <div class="pendant"></div>
-          <img src="../../../static/images/考试流程(完整)4_03.png" alt />
+          <img src="../../../static/images/考试流程(完整)6_03.png" alt />
         </div>
         <img src="../../../static/images/考试流程(完整)2_03.png" alt />
         <div class="list">
-          <img src="../../../static/images/考试流程(完整)5_03.png" alt />
+          <img src="../../../static/images/考试流程(完整)4_03.png" alt />
           <div class="pendant"></div>
+          <div class="side">
+            <div class="top">{{example[2].title}}</div>
+            <pre>{{example[2].content}}</pre>
+            <div class="button" @click="details(example[2].id)">查看详情</div>
+          </div>
+        </div>
+        <!-- <img src="../../../static/images/考试流程(完整)1_03.png" alt /> -->
+        <!-- <div class="list">
           <div class="side">
             <div class="top">{{example[2].title}}</div>
             <pre>{{example[2].content}}</pre>
             <div class="button">查看详情</div>
           </div>
-        </div>
-        <img src="../../../static/images/考试流程(完整)1_03.png" alt />
-        <div class="list">
-          <div class="side">
-            <div class="top">{{example[3].title}}</div>
-            <pre>{{example[3].content}}</pre>
-            <div class="button">查看详情</div>
-          </div>
           <div class="pendant"></div>
           <img src="../../../static/images/考试流程(完整)6_03.png" alt />
-        </div>
+        </div> -->
       </div>
     </section>
   </div>
@@ -111,6 +111,9 @@ export default {
           this.example = example;
         }
       }
+    },
+    details(id){
+      this.$router.push({ path: "/FlowPathDetail", query: { id: id } });
     }
   },
   filter: {},

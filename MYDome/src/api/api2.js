@@ -37,4 +37,6 @@ export default {
   informationList:`${information}/information/list`,
   // 资讯详情 
   informationInfo:`${information}/information/info`,
+  // 获取考试流程详情
+  getProcessInfo:`${BASE_URLA}/exam/process/getProcessInfo`,
 };
