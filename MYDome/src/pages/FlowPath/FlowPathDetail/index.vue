@@ -1,9 +1,9 @@
 <template>
   <div id="FlowPathDetail">
     <div v-for="(item, index) in IsgetProcessInfo" :key="index" class="list">
-      <p>{{item.content}}</p>
+      <p ref="isp">{{item.content}}</p>
       <div>
-        <img :src="item.pic" alt />
+        <img :src="item.pic" alt ref="imgs" />
       </div>
     </div>
   </div>
@@ -44,6 +44,15 @@ export default {
       });
       IsgetProcessInfo = res.data.result;
       this.IsgetProcessInfo = IsgetProcessInfo.sort(this.sortBy("order"));
+
+      setTimeout(() => {
+        for (let index = 0; index < this.$refs.imgs.length; index++) {
+          let width = this.$refs.imgs[index].width;
+          let height = this.$refs.imgs[index].height;
+          let scrollWidth = this.$refs.isp[0].scrollWidth;
+          this.$refs.imgs[index].height = (height * scrollWidth) / width;
+        }
+      }, 10);
     },
     // 排序
     sortBy(field) {
@@ -71,8 +80,10 @@ export default {
     div {
       display: flex;
       justify-content: center;
-      img {
-        width: 80%;
+      /deep/img {
+        // width: 80%;
+        // width: 288px;
+        // height: 162px;
       }
     }
   }

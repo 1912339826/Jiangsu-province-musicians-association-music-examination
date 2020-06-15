@@ -32,8 +32,7 @@
           >
             <van-loading size="20vw" />
           </div>
-          <div style="height:10vh">
-          </div>
+          <div style="height:13vh"></div>
         </van-tab>
       </van-tabs>
     </section>
@@ -42,19 +41,43 @@
 <script>
 export default {
   name: "recommend",
-  components: {
-  },
+  components: {},
   data() {
     return {
       loading: false,
       active: 0,
       IscatList: [{ id: "1", name: "" }],
       Islist: [
-        { id: "", pics: "http://img0.imgtn.bdimg.com/it/u=3869576267,4119045947&fm=15&gp=0.jpg", title: "" },
-        { id: "", pics: "http://img4.imgtn.bdimg.com/it/u=2697916822,1858746706&fm=26&gp=0.jpg", title: "" },
-        { id: "", pics: "http://img0.imgtn.bdimg.com/it/u=3869576267,4119045947&fm=15&gp=0.jpg", title: "" },
-        { id: "", pics: "http://img0.imgtn.bdimg.com/it/u=3869576267,4119045947&fm=15&gp=0.jpg", title: "" },
-        { id: "", pics: "http://img0.imgtn.bdimg.com/it/u=3869576267,4119045947&fm=15&gp=0.jpg", title: "" }
+        {
+          id: "",
+          pics:
+            "http://img0.imgtn.bdimg.com/it/u=3869576267,4119045947&fm=15&gp=0.jpg",
+          title: ""
+        },
+        {
+          id: "",
+          pics:
+            "http://img4.imgtn.bdimg.com/it/u=2697916822,1858746706&fm=26&gp=0.jpg",
+          title: ""
+        },
+        {
+          id: "",
+          pics:
+            "http://img0.imgtn.bdimg.com/it/u=3869576267,4119045947&fm=15&gp=0.jpg",
+          title: ""
+        },
+        {
+          id: "",
+          pics:
+            "http://img0.imgtn.bdimg.com/it/u=3869576267,4119045947&fm=15&gp=0.jpg",
+          title: ""
+        },
+        {
+          id: "",
+          pics:
+            "http://img0.imgtn.bdimg.com/it/u=3869576267,4119045947&fm=15&gp=0.jpg",
+          title: ""
+        }
       ]
     };
   },
@@ -87,11 +110,11 @@ export default {
     }
   },
   created() {
-      this.catList(0)
+    this.catList(0);
   },
   mounted() {},
   activated() {
-    this.catList(this.active)
+    this.catList(this.active);
   },
   update() {},
   filter: {},

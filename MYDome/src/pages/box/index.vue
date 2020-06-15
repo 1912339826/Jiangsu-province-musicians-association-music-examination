@@ -3,11 +3,11 @@
     <keep-alive>
       <router-view></router-view>
     </keep-alive>
-    <van-tabbar v-model="active" active-color="#535353" inactive-color="#a3a3a3" @change="change">
+    <!-- <van-tabbar v-model="active" active-color="#535353" inactive-color="#a3a3a3" @change="change">
       <van-tabbar-item name="home" icon="wap-home-o">首页</van-tabbar-item>
       <van-tabbar-item name="recommend" icon="orders-o">推荐教材</van-tabbar-item>
       <van-tabbar-item name="my" icon="manager-o">我的</van-tabbar-item>
-    </van-tabbar>
+    </van-tabbar> -->
   </div>
 </template>
 
