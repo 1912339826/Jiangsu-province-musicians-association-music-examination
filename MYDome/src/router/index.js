@@ -34,30 +34,34 @@ export default new Router({
       path: '/box',
       name: 'box',
       component: box,
-      meta:{
-        KeepAlive:true
+      meta: {
+        KeepAlive: false,
+        title: ''
       },
       children: [{
           path: 'home',
           name: 'home',
           component: home,
-          meta:{
-            KeepAlive:true
+          meta: {
+            KeepAlive: true,
+            title: ''
           },
         },
         {
           path: 'recommend',
           name: 'recommend',
           component: recommend,
-          meta:{
-            KeepAlive:true
+          meta: {
+            KeepAlive: false,
+            title: '指定教材'
           },
         }, {
           path: 'my',
           name: 'my',
           component: my,
-          meta:{
-            KeepAlive:true
+          meta: {
+            KeepAlive: true,
+            title: ''
           },
         }
       ],
@@ -67,62 +71,70 @@ export default new Router({
       path: "/defaults",
       name: 'defaults',
       component: defaults,
-      meta:{
-        KeepAlive:true
+      meta: {
+        KeepAlive: false,
+        title: '指定教材'
       },
     },
     {
       path: '/information',
       name: 'information',
       component: information,
-      meta:{
-        KeepAlive:true
+      meta: {
+        KeepAlive: false,
+        title: '音乐资讯'
       },
     }, {
       path: '/TestInstructions',
       name: 'TestInstructions',
       component: TestInstructions,
-      meta:{
-        KeepAlive:true
+      meta: {
+        KeepAlive: false,
+        title: '考试须知'
       },
     }, {
       path: '/FlowPath',
       name: 'FlowPath',
       component: FlowPath,
-      meta:{
-        KeepAlive:true
+      meta: {
+        KeepAlive: false,
+        title: '考级指南'
       },
     },
     {
       path: '/informationDetail',
       name: 'informationDetail',
       component: informationDetail,
-      meta:{
-        KeepAlive:false
+      meta: {
+        KeepAlive: false,
+        title: '音乐资讯'
       },
     },
     {
       path: '/FlowPathDetail',
       name: 'FlowPathDetail',
       component: FlowPathDetail,
-      meta:{
-        KeepAlive:true
+      meta: {
+        KeepAlive: false,
+        title: '考级指南'
       },
     },
     {
       path: '/ContactUs',
       name: 'ContactUs',
       component: ContactUs,
-      meta:{
-        KeepAlive:true
+      meta: {
+        KeepAlive: false,
+        title: '联系我们'
       },
     },
     {
       path: '/PrivacyPolicy',
       name: 'PrivacyPolicy',
       component: PrivacyPolicy,
-      meta:{
-        KeepAlive:false
+      meta: {
+        KeepAlive: false,
+        title: '隐私政策'
       },
     }
   ]

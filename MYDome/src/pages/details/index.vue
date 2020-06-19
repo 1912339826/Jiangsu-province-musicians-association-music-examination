@@ -77,7 +77,10 @@ export default {
   },
   filter: {},
   computed: {},
-  watch: {}
+  watch: {},
+  beforeDestroy(){
+    this.Mysetback()
+  }
 };
 </script>
 

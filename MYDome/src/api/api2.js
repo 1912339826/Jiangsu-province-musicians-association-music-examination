@@ -2,7 +2,7 @@ if (process.env.NODE_ENV == "development") {
   // 开发
   var BASE_URLA = "http://47.98.169.218:8083";
   // var BASE_URLA = "http://192.168.0.189:8083";
-  
+  // var BASE_URLA = 'http://sign.xn--fjq0sg8h2zkivvwsonptcv2b.com/api'
   var information = "http://47.98.169.218:8090"
 } else if (process.env.NODE_ENV == "debug") {
   // debug

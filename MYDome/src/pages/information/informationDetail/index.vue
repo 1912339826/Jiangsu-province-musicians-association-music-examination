@@ -35,7 +35,10 @@ export default {
     }
   },
   computed: {},
-  watch: {}
+  watch: {},
+  beforeDestroy(){
+    this.Mysetback()
+  }
 };
 </script>
 

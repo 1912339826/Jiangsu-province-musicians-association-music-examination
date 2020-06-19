@@ -123,6 +123,9 @@ export default {
     active(news) {
       this.list(news);
     }
+  },
+  beforeDestroy(){
+    this.Mysetback()
   }
 };
 </script>

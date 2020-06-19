@@ -30,6 +30,36 @@ window.api = api
 new Vue({
   el: '#app',
   router,
-  components: { App },
+  components: {
+    App
+  },
   template: '<App/>'
 })
+router.beforeEach((to, from, next) => {
+  /* 路由发生变化修改页面title */
+  if (to.meta.title) {
+    document.title = to.meta.title
+  }
+  next()
+})
+
+Vue.prototype.Mysetback = function () {
+  var u = navigator.userAgent;
+  //Android终端
+
+  var isAndroid = u.indexOf("Android") > -1 || u.indexOf("Adr") > -1;
+
+  //iOS终端
+
+  var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+
+  if (isAndroid) {
+    //如果为Android
+    window.android.closePage();
+  }
+
+  if (isiOS) {
+    //如果为iOS
+    window.webkit.messageHandlers.closePage.postMessage();
+  }
+}

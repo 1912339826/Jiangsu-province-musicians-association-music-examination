@@ -152,7 +152,6 @@ export default {
     return {};
   },
   created() {
-    document.title = "隐私政策";
   },
   mounted() {},
   activated() {},
@@ -160,7 +159,10 @@ export default {
   methods: {},
   filters: {},
   computed: {},
-  watch: {}
+  watch: {},
+  beforeDestroy(){
+    this.Mysetback()
+  }
 };
 </script>
 

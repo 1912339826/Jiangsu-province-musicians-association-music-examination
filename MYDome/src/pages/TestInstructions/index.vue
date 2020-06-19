@@ -32,9 +32,13 @@ export default {
       let res = await this.$req(window.api.getNotes, {});
       this.test = res.data.result[0].content;
       this.title = res.data.result[0].subtitle;
+      
     },
   },
-  watch: {}
+  watch: {},
+  beforeDestroy(){
+    this.Mysetback()
+  }
 };
 </script>
 

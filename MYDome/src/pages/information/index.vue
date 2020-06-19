@@ -166,6 +166,9 @@ export default {
         this.loading = true;
       }, 300);
     }
+  },
+  beforeDestroy(){
+    this.Mysetback()
   }
 };
 </script>
