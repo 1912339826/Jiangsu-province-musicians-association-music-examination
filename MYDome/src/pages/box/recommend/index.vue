@@ -19,7 +19,7 @@
           :key="index.id"
           title-style="font-weight: 600;"
         >
-          <div id="content" v-if="loading" style="height:80vh;overflow: scroll;">
+          <div id="content" v-if="loading" style="height:93vh;overflow: scroll;">
             <div v-for="(item, index) in Islist" :key="index" @click="defaultClick(item.id)">
               <img :src="item.pics" alt />
               <span>{{item.title}}</span>
@@ -27,12 +27,12 @@
           </div>
           <div
             v-if="!loading"
-            style="width:100%;height:80vh;display: flex;
+            style="width:100%;height:93vh;display: flex;
     justify-content: center; align-items: center;"
           >
             <van-loading size="20vw" />
           </div>
-          <div style="height:13vh"></div>
+          <!-- <div style="height:13vh"></div> -->
         </van-tab>
       </van-tabs>
     </section>

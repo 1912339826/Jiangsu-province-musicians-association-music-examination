@@ -3,7 +3,7 @@
     <div v-for="(item, index) in IsgetProcessInfo" :key="index" class="list">
       <p ref="isp">{{item.content}}</p>
       <div>
-        <img :src="item.pic" alt ref="imgs" />
+        <img :src="item.pic" alt ref="imgs" @load="Imgload(item)" />
       </div>
     </div>
   </div>
@@ -32,7 +32,7 @@ export default {
   },
   mounted() {},
   activated() {
-    this.getProcessInfo(this.$route.query.id);
+    // this.getProcessInfo(this.$route.query.id);
   },
   update() {},
   methods: {
@@ -44,21 +44,23 @@ export default {
       });
       IsgetProcessInfo = res.data.result;
       this.IsgetProcessInfo = IsgetProcessInfo.sort(this.sortBy("order"));
-
-      setTimeout(() => {
-        for (let index = 0; index < this.$refs.imgs.length; index++) {
-          let width = this.$refs.imgs[index].width;
-          let height = this.$refs.imgs[index].height;
-          let scrollWidth = this.$refs.isp[0].scrollWidth;
-          this.$refs.imgs[index].height = (height * scrollWidth) / width;
-        }
-      }, 10);
     },
     // 排序
     sortBy(field) {
       return (x, y) => {
         return x[field] - y[field];
       };
+    },
+    Imgload(e) {
+      // 图片加载成功时能够执行的方法
+      if (e.order == this.IsgetProcessInfo.length) {
+        for (let index = 0; index < this.$refs.imgs.length; index++) {
+          let width = this.$refs.imgs[index].width;
+          let height = this.$refs.imgs[index].height;
+          let scrollWidth = this.$refs.isp[0].scrollWidth;
+          this.$refs.imgs[index].height = (height * scrollWidth) / width;
+        }
+      }
     }
   },
   filters: {},

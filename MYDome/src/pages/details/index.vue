@@ -68,7 +68,6 @@ export default {
       let res = await this.$req(window.api.info, {
         id: id
       });
-      console.log(res.data.result);
       obj = res.data.result;
       this.Isinfo = obj;
     },

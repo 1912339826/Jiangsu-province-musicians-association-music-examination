@@ -1,14 +1,17 @@
 <template>
   <div id="app">
     <keep-alive>
-      <router-view></router-view>
+      <router-view v-if="$route.meta.keepAlive"></router-view>
     </keep-alive>
+    <router-view v-if="!$route.meta.keepAlive"></router-view>
   </div>
 </template>
 
 <script>
 export default {
-  name: "App"
+  name: "App",
+  created(){
+  }
 };
 </script>
 
@@ -20,7 +23,7 @@ export default {
   margin: 0;
   box-sizing: border-box;
 }
-#app {
+#app { 
   pre {
     white-space: pre-wrap; /* css3.0 */
     white-space: -moz-pre-wrap; /* Firefox */

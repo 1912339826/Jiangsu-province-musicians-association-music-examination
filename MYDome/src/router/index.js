@@ -21,6 +21,8 @@ import FlowPath from '../pages/FlowPath/index.vue'
 import FlowPathDetail from '../pages/FlowPath/FlowPathDetail/index.vue'
 // 联系我们
 import ContactUs from '../pages/ContactUs/index.vue'
+// 隐私政策
+import PrivacyPolicy from '../pages/PrivacyPolicy/index.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -32,19 +34,31 @@ export default new Router({
       path: '/box',
       name: 'box',
       component: box,
+      meta:{
+        KeepAlive:true
+      },
       children: [{
           path: 'home',
           name: 'home',
-          component: home
+          component: home,
+          meta:{
+            KeepAlive:true
+          },
         },
         {
           path: 'recommend',
           name: 'recommend',
-          component: recommend
+          component: recommend,
+          meta:{
+            KeepAlive:true
+          },
         }, {
           path: 'my',
           name: 'my',
-          component: my
+          component: my,
+          meta:{
+            KeepAlive:true
+          },
         }
       ],
       redirect: '/box/home',
@@ -52,35 +66,64 @@ export default new Router({
     {
       path: "/defaults",
       name: 'defaults',
-      component: defaults
+      component: defaults,
+      meta:{
+        KeepAlive:true
+      },
     },
     {
       path: '/information',
       name: 'information',
-      component: information
+      component: information,
+      meta:{
+        KeepAlive:true
+      },
     }, {
       path: '/TestInstructions',
       name: 'TestInstructions',
-      component: TestInstructions
+      component: TestInstructions,
+      meta:{
+        KeepAlive:true
+      },
     }, {
       path: '/FlowPath',
       name: 'FlowPath',
-      component: FlowPath
+      component: FlowPath,
+      meta:{
+        KeepAlive:true
+      },
     },
     {
       path: '/informationDetail',
       name: 'informationDetail',
-      component: informationDetail
+      component: informationDetail,
+      meta:{
+        KeepAlive:false
+      },
     },
     {
       path: '/FlowPathDetail',
       name: 'FlowPathDetail',
-      component: FlowPathDetail
+      component: FlowPathDetail,
+      meta:{
+        KeepAlive:true
+      },
     },
     {
       path: '/ContactUs',
       name: 'ContactUs',
-      component: ContactUs
+      component: ContactUs,
+      meta:{
+        KeepAlive:true
+      },
+    },
+    {
+      path: '/PrivacyPolicy',
+      name: 'PrivacyPolicy',
+      component: PrivacyPolicy,
+      meta:{
+        KeepAlive:false
+      },
     }
   ]
 })
