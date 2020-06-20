@@ -1,18 +1,24 @@
 <template>
   <div id="FlowPathDetail">
-    <div v-for="(item, index) in IsgetProcessInfo" :key="index" class="list">
-      <p ref="isp">{{item.content}}</p>
-      <div>
-        <img :src="item.pic" alt ref="imgs" @load="Imgload(item)" />
+    <NavBar style="position: fixed;top:0;" />
+    <div class="box">
+      <div v-for="(item, index) in IsgetProcessInfo" :key="index" class="list">
+        <p ref="isp">{{item.content}}</p>
+        <div>
+          <img :src="item.pic" alt ref="imgs" @load="Imgload(item)" />
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import NavBar from "../../../components/NavBar";
 export default {
   name: "FlowPathDetail",
-  components: {},
+  components: {
+    NavBar
+  },
   props: {},
   data() {
     return {
@@ -66,29 +72,30 @@ export default {
   filters: {},
   computed: {},
   watch: {},
-  beforeDestroy(){
-    this.Mysetback()
-  }
+  beforeDestroy() {}
 };
 </script>
 
 <style lang="less" scoped>
 #FlowPathDetail {
-  padding: 5vw;
-  .list {
-    margin-bottom: 10vw;
-    p {
-      font-size: 0.4rem;
-      line-height: 10vw;
-      margin-bottom: 5vw;
-    }
-    div {
-      display: flex;
-      justify-content: center;
-      /deep/img {
-        // width: 80%;
-        // width: 288px;
-        // height: 162px;
+  margin-top: 15vw;
+  .box {
+    padding: 5vw;
+    .list {
+      margin-bottom: 10vw;
+      p {
+        font-size: 0.4rem;
+        line-height: 10vw;
+        margin-bottom: 5vw;
+      }
+      div {
+        display: flex;
+        justify-content: center;
+        /deep/img {
+          // width: 80%;
+          // width: 288px;
+          // height: 162px;
+        }
       }
     }
   }

@@ -1,5 +1,6 @@
 <template>
   <div id="details">
+    <NavBar style="position: fixed;top:0;"/>
     <section class="box">
       <div class="top">
         <img :src="Isinfo.pics" alt />
@@ -35,9 +36,11 @@
 </template>
 
 <script>
+import NavBar from '../../components/NavBar'
 export default {
   name: "detail",
   components: {
+    NavBar
   },
   props: {},
   data() {
@@ -79,15 +82,15 @@ export default {
   computed: {},
   watch: {},
   beforeDestroy(){
-    this.Mysetback()
   }
 };
 </script>
 
 <style lang="less" scoped>
 #details {
+  margin-top: 15vw;
   .box {
-    // margin-top: 15vw;
+    
     padding-left: 2vw;
     padding-right: 2vw;
     .content {

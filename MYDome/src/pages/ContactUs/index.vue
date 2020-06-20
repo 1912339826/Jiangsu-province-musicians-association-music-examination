@@ -1,6 +1,7 @@
 <template>
   <div id="ContactUs">
-    <div>
+    <NavBar style="position: fixed;top:0;"/>
+    <div style="padding-top: 3vw;">
       <span>地址:</span>
       <span>{{Iscontact.address}}</span>
     </div>
@@ -24,9 +25,12 @@
 </template>
 
 <script>
+import NavBar from '../../components/NavBar'
 export default {
   name: "ContactUs",
-  components: {},
+  components: {
+    NavBar
+  },
   props: {},
   data() {
     return {
@@ -52,7 +56,6 @@ export default {
   computed: {},
   watch: {},
   beforeDestroy(){
-     this.Mysetback()
   }
 };
 </script>
@@ -60,9 +63,11 @@ export default {
 <style lang="less" scoped>
 #ContactUs {
   font-size: 0.4rem;
-  padding: 3vw;
+  margin-top: 15vw ;
   div {
     line-height: 10vw;
+    padding-right: 3vw;
+    padding-left: 3vw;
   }
   a {
     text-decoration: underline;

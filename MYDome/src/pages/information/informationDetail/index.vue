@@ -1,5 +1,6 @@
 <template>
   <div id="informationDetail">
+    <NavBar style="position: fixed;top:0;"/>
     <section class="box">
       <pre v-html="IsinformationInfo"></pre>
     </section>
@@ -7,9 +8,11 @@
 </template>
 
 <script>
+import NavBar from '../../../components/NavBar'
 export default {
   name: "informationDetail",
   components: {
+    NavBar
   },
   props: {},
   data() {
@@ -37,7 +40,6 @@ export default {
   computed: {},
   watch: {},
   beforeDestroy(){
-    this.Mysetback()
   }
 };
 </script>
@@ -47,7 +49,7 @@ export default {
   background-color: rgb(251, 251, 251);
   .box {
     border-top: 1px solid #f6f7fb;
-    // margin-top: 15vw;
+    margin-top: 15vw;
     pre {
       margin-top: 5vw;
       padding-left: 0.25rem;

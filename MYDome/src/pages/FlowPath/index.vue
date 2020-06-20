@@ -1,5 +1,6 @@
 <template>
   <div id="FlowPath">
+    <NavBar style="position: fixed;top:0;"/>
     <section class="box">
       <fieldset>
         <legend>报考步骤</legend>
@@ -64,9 +65,11 @@
 </template>
 
 <script>
+import NavBar from '../../components/NavBar'
 export default {
   name: "FlowPath",
   components: {
+    NavBar
   },
   props: {},
   data() {
@@ -120,7 +123,6 @@ export default {
   computed: {},
   watch: {},
   beforeDestroy(){
-    this.Mysetback()
   }
 };
 </script>
@@ -128,6 +130,7 @@ export default {
 <style lang="less" scoped>
 #FlowPath {
   .box {
+    margin-top: 15vw;
     padding-bottom: 20vw;
     background-color: #fefefe;
     padding-top: 3vw;

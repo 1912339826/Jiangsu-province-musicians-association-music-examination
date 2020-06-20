@@ -125,7 +125,7 @@ export default {
     }
   },
   beforeDestroy(){
-    this.Mysetback()
+    
   }
 };
 </script>

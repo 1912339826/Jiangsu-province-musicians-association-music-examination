@@ -1,6 +1,6 @@
 <template>
   <div class="NavBar">
-    <van-icon name="arrow-left" @click="onclick"/>
+    <van-icon name="arrow-left" @click="onclick" style="font-size:0.6rem;" />
     <div id="title">{{title}}</div>
   </div>
 </template>
@@ -9,26 +9,27 @@
 export default {
   name: "NavBar",
   props: {
-    title: {
+    goback: {
       type: String,
-      default: "默认值"
-    },
-    goback:{
-      type:String,
-      default:"recommend"
+      default: "recommend"
     }
   },
   data() {
-    return {};
+    return {
+      title: ""
+    };
   },
-  created() {},
+  created() {
+    this.title = this.$route.meta.title;
+  },
   mounted() {},
   activated() {},
   update() {},
   methods: {
-      onclick(){
-          this.$router.push({name:this.goback})
-      }
+    onclick() {
+      this.Mysetback();
+      this.$router.go(-1);
+    }
   },
   filter: {},
   computed: {},
@@ -44,11 +45,12 @@ export default {
   display: flex;
   align-items: center;
   background-color: white;
-  #title{
-      width: 75%;
-      font-size: 0.5rem;
-      font-weight: 700;
-      text-align: center;
+  #title {
+    width: 75%;
+    font-size: 0.4rem;
+    font-weight: 700;
+    padding-left: 8vw;
+    text-align: center;
   }
 }
 </style>

@@ -1,5 +1,6 @@
 <template>
   <div id="information">
+    <NavBar style="position: fixed;top:0;" />
     <section class="box">
       <van-tabs
         sticky
@@ -19,7 +20,7 @@
           :key="index.name"
           title-style="font-weight: 600;"
         >
-          <div v-if="loading" style="height:95vh;overflow: scroll;">
+          <div v-if="loading" style="height:85vh;overflow: scroll;">
             <van-list
               v-model="loadinglist"
               :finished="finished"
@@ -50,7 +51,7 @@
           </div>
           <div
             v-if="!loading"
-            style="width:100%;height:85vh;display: flex;
+            style="width:100%;height:75vh;display: flex;
     justify-content: center; align-items: center;"
           >
             <van-loading size="20vw" />
@@ -62,9 +63,12 @@
 </template>
 
 <script>
+import NavBar from "../../components/NavBar";
 export default {
   name: "Information",
-  components: {},
+  components: {
+    NavBar
+  },
   props: {},
   data() {
     return {
@@ -167,15 +171,14 @@ export default {
       }, 300);
     }
   },
-  beforeDestroy(){
-    this.Mysetback()
-  }
+  beforeDestroy() {}
 };
 </script>
 
 <style lang="less" scoped>
 #information {
   .box {
+    margin-top: 15vw;
     .list {
       padding-right: 3vw;
       padding-left: 3vw;
