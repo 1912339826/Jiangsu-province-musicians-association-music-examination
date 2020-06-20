@@ -1,6 +1,6 @@
 <template>
   <div id="details">
-    <NavBar style="position: fixed;top:0;"/>
+    <NavBar style="position: fixed;top:0;" />
     <section class="box">
       <div class="top">
         <img :src="Isinfo.pics" alt />
@@ -26,7 +26,7 @@
         <pre v-html="Isinfo.content"></pre>
       </div>
     </section>
-    <div class="Isbottom">
+    <div class="Isbottom" style="display:none;">
       <div @click="goback">
         <img src="../../../static/images/链接_03.png" alt />
         <span>购买链接</span>
@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import NavBar from '../../components/NavBar'
+import NavBar from "../../components/NavBar";
 export default {
   name: "detail",
   components: {
@@ -61,7 +61,7 @@ export default {
   },
   mounted() {},
   activated() {
-     this.info(this.$route.query.id);
+    this.info(this.$route.query.id);
   },
   update() {},
   methods: {
@@ -74,15 +74,14 @@ export default {
       obj = res.data.result;
       this.Isinfo = obj;
     },
-    goback(){
-      window.location.href=this.Isinfo.link;
+    goback() {
+      window.location.href = this.Isinfo.link;
     }
   },
   filter: {},
   computed: {},
   watch: {},
-  beforeDestroy(){
-  }
+  beforeDestroy() {}
 };
 </script>
 
@@ -90,7 +89,6 @@ export default {
 #details {
   margin-top: 15vw;
   .box {
-    
     padding-left: 2vw;
     padding-right: 2vw;
     .content {
