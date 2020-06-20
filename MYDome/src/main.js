@@ -60,6 +60,6 @@ Vue.prototype.Mysetback = function () {
 
   if (isiOS) {
     //如果为iOS
-    window.webkit.messageHandlers.closePage.postMessage();
+    window.webkit.messageHandlers.closePage.postMessage('')
   }
 }

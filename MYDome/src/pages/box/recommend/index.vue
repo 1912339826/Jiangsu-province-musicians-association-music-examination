@@ -20,9 +20,11 @@
           title-style="font-weight: 600;"
         >
           <div id="content" v-if="loading" style="height:93vh;overflow: scroll;">
-            <div v-for="(item, index) in Islist" :key="index" @click="defaultClick(item.id)">
-              <img :src="item.pics" alt />
-              <span>{{item.title}}</span>
+            <div v-for="(item, index) in Islist" :key="index">
+              <router-link :to="{path: '/defaults', query: {id: item.id }}">
+                <img :src="item.pics" alt />
+                <span>{{item.title}}</span>
+              </router-link>
             </div>
           </div>
           <div
@@ -124,9 +126,7 @@ export default {
       this.list(news);
     }
   },
-  beforeDestroy(){
-    
-  }
+  beforeDestroy() {}
 };
 </script>
 
@@ -146,14 +146,18 @@ export default {
         margin-left: 3%;
         margin-right: 3%;
         margin-top: 2.5vw;
-        display: flex;
-        justify-content: space-between;
-        flex-direction: column;
-        align-items: center;
+
         padding-top: 3vw;
         padding-bottom: 3vw;
         &:nth-child(even) {
           margin-left: 0%;
+        }
+        a {
+          color: #000;
+          display: flex;
+          justify-content: space-between;
+          flex-direction: column;
+          align-items: center;
         }
         img {
           width: 70%;

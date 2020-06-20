@@ -1,5 +1,5 @@
 <template>
-  <div class="NavBar">
+  <div id="NavBar">
     <van-icon name="arrow-left" @click="onclick" style="font-size:0.6rem;" />
     <div id="title">{{title}}</div>
   </div>
@@ -38,16 +38,18 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.NavBar {
+#NavBar {
   width: 100%;
   height: 15vw;
-  font-size: 0.8rem;
   display: flex;
   align-items: center;
   background-color: white;
+  /deep/.van-icon.van-icon-arrow-left {
+    font-size: 0.6rem;
+  }
   #title {
     width: 75%;
-    font-size: 0.4rem;
+    font-size: 0.3rem;
     font-weight: 700;
     padding-left: 8vw;
     text-align: center;

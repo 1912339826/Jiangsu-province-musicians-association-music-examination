@@ -34,6 +34,7 @@ export default {
   update() {},
   methods: {
     change(e) {
+      console.log('Hey, congratulations F12')
       this.$router.push({ name: e });
     }
   },
