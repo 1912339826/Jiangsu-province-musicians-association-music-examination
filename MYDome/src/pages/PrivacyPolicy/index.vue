@@ -1,9 +1,9 @@
 // 隐私政策
 <template>
   <div id="PrivacyPolicy">
-    <NavBar style="position: fixed;top:0;" />
+    <!-- <NavBar style="position: fixed;top:0;" /> -->
     <div class="box">
-      <h4>音协隐私政策</h4>
+      <h4 style="margin-top: 5vw;">音协隐私政策</h4>
       <div class="paragraph">
         <p>上一次生效日期：2020年6月25日</p>
         <p>生效日期：2020年6月25日</p>
@@ -165,7 +165,9 @@ export default {
   data() {
     return {};
   },
-  created() {},
+  created() {
+    document.title = this.$route.meta.title
+  },
   mounted() {},
   activated() {},
   update() {},
@@ -179,7 +181,7 @@ export default {
 
 <style lang="less" scoped>
 #PrivacyPolicy {
-  margin-top: 15vw;
+  // margin-top: 15vw;
   .box {
     padding: 3vw;
     h4 {

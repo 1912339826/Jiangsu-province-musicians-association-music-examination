@@ -22,8 +22,10 @@
           <div id="content" v-if="loading" style="height:93vh;overflow: scroll;">
             <div v-for="(item, index) in Islist" :key="index">
               <router-link :to="{path: '/defaults', query: {id: item.id }}">
+              <!-- <a :href="'web/#/defaults?id='+item.id"> -->
                 <img :src="item.pics" alt />
                 <span>{{item.title}}</span>
+              <!-- </a> -->
               </router-link>
             </div>
           </div>
@@ -41,6 +43,7 @@
   </div>
 </template>
 <script>
+// import a from '../../details/index'
 export default {
   name: "recommend",
   components: {},
@@ -112,18 +115,20 @@ export default {
     }
   },
   created() {
+    console.log(
+      window.BASE_URLA + "/defaults?id=48150061895045b286f9e1fc44bdd091"
+    );
+    document.title = this.$route.meta.title;
     this.catList(0);
   },
   mounted() {},
-  activated() {
-    this.catList(this.active);
-  },
+  activated() {},
   update() {},
   filter: {},
   computed: {},
   watch: {
     active(news) {
-      this.list(news);
+      // this.list(news);
     }
   },
   beforeDestroy() {}

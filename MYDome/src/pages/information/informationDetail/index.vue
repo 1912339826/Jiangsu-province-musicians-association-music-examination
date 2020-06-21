@@ -1,6 +1,6 @@
 <template>
   <div id="informationDetail">
-    <NavBar style="position: fixed;top:0;"/>
+    <!-- <NavBar style="position: fixed;top:0;"/> -->
     <section class="box">
       <pre v-html="IsinformationInfo"></pre>
     </section>
@@ -21,6 +21,7 @@ export default {
     };
   },
   created() {
+    document.title = this.$route.meta.title
     this.informationInfo(this.$route.query.id);
   },
   mounted() {},
@@ -49,7 +50,7 @@ export default {
   background-color: rgb(251, 251, 251);
   .box {
     border-top: 1px solid #f6f7fb;
-    margin-top: 15vw;
+    // margin-top: 15vw;
     pre {
       margin-top: 5vw;
       padding-left: 0.25rem;

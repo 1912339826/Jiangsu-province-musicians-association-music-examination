@@ -38,7 +38,7 @@ new Vue({
 router.beforeEach((to, from, next) => {
   /* 路由发生变化修改页面title */
   if (to.meta.title) {
-    document.title = to.meta.title
+    // document.title = to.meta.title
   }
   next()
 })
@@ -46,14 +46,13 @@ router.beforeEach((to, from, next) => {
 Vue.prototype.Mysetback = function () {
   var u = navigator.userAgent;
   //Android终端
-
   var isAndroid = u.indexOf("Android") > -1 || u.indexOf("Adr") > -1;
 
   //iOS终端
 
   var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
-
   if (isAndroid) {
+    alert('ss')
     //如果为Android
     window.android.closePage();
   }

@@ -1,6 +1,6 @@
 <template>
   <div id="FlowPath">
-    <NavBar style="position: fixed;top:0;"/>
+    <!-- <NavBar style="position: fixed;top:0;"/> -->
     <section class="box">
       <fieldset>
         <legend>报考步骤</legend>
@@ -90,6 +90,7 @@ export default {
     };
   },
   created() {
+    document.title = this.$route.meta.title
     this.getProcess();
   },
   mounted() {},
@@ -130,7 +131,7 @@ export default {
 <style lang="less" scoped>
 #FlowPath {
   .box {
-    margin-top: 15vw;
+    // margin-top: 15vw;
     padding-bottom: 20vw;
     background-color: #fefefe;
     padding-top: 3vw;

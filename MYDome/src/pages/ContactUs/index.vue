@@ -1,6 +1,6 @@
 <template>
   <div id="ContactUs">
-    <NavBar style="position: fixed;top:0;"/>
+    <!-- <NavBar style="position: fixed;top:0;"/> -->
     <div style="padding-top: 3vw;">
       <span>地址:</span>
       <span>{{Iscontact.address}}</span>
@@ -38,6 +38,7 @@ export default {
     };
   },
   created() {
+    document.title = this.$route.meta.title
     this.contact();
   },
   mounted() {},
@@ -63,7 +64,7 @@ export default {
 <style lang="less" scoped>
 #ContactUs {
   font-size: 0.4rem;
-  margin-top: 15vw ;
+  // margin-top: 15vw ;
   div {
     line-height: 10vw;
     padding-right: 3vw;

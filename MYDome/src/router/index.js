@@ -43,7 +43,7 @@ export default new Router({
           name: 'home',
           component: home,
           meta: {
-            KeepAlive: true,
+            KeepAlive: false,
             title: ''
           },
         },
@@ -60,7 +60,7 @@ export default new Router({
           name: 'my',
           component: my,
           meta: {
-            KeepAlive: true,
+            KeepAlive: false,
             title: ''
           },
         }

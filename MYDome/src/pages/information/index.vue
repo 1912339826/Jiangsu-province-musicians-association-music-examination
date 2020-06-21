@@ -1,6 +1,6 @@
 <template>
   <div id="information">
-    <NavBar style="position: fixed;top:0;" />
+    <!-- <NavBar style="position: fixed;top:0;" /> -->
     <section class="box">
       <van-tabs
         sticky
@@ -97,6 +97,7 @@ export default {
     };
   },
   created() {
+    document.title = this.$route.meta.title
     this.IsinformationCategory = [];
     this.ISinformationList = [];
     this.informationCategory();
@@ -178,7 +179,7 @@ export default {
 <style lang="less" scoped>
 #information {
   .box {
-    margin-top: 15vw;
+    // margin-top: 15vw;
     .list {
       padding-right: 3vw;
       padding-left: 3vw;

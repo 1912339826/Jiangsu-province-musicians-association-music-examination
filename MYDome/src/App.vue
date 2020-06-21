@@ -12,6 +12,8 @@ export default {
   name: "App",
   created(){
   },
+  watch: {
+  },
 };
 </script>
 

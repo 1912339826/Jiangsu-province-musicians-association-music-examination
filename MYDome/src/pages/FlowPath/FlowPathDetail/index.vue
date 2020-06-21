@@ -1,6 +1,6 @@
 <template>
   <div id="FlowPathDetail">
-    <NavBar style="position: fixed;top:0;" />
+    <!-- <NavBar style="position: fixed;top:0;" /> -->
     <div class="box">
       <div v-for="(item, index) in IsgetProcessInfo" :key="index" class="list">
         <p ref="isp">{{item.content}}</p>
@@ -34,6 +34,7 @@ export default {
     };
   },
   created() {
+    document.title = this.$route.meta.title
     this.getProcessInfo(this.$route.query.id);
   },
   mounted() {},
@@ -78,7 +79,7 @@ export default {
 
 <style lang="less" scoped>
 #FlowPathDetail {
-  margin-top: 15vw;
+  // margin-top: 15vw;
   .box {
     padding: 5vw;
     .list {

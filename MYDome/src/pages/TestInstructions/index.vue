@@ -1,8 +1,8 @@
 <template>
   <div id="TestInstructions">
-    <NavBar style="position: fixed;top:0;"/>
+    <!-- <NavBar style="position: fixed;top:0;"/> -->
     <section class="box">
-      <p style="text-align: center;font-size: 0.28rem;padding-top: 3vw;">{{title}}</p>
+      <p style="text-align: center;font-size: 0.28rem;padding-top: 3vw;margin-top: 3vw;">{{title}}</p>
       <pre v-html="test"></pre>
     </section>
   </div>
@@ -23,6 +23,7 @@ export default {
     };
   },
   created() {
+    document.title = this.$route.meta.title
     this.getNotes()
   },
   mounted() {},
@@ -47,7 +48,7 @@ export default {
 <style lang="less" scoped>
 #TestInstructions {
   .box {
-    margin-top: 15vw;
+    // margin-top: 15vw;
     background-color: #ffffff;
     border-top: 1px solid #f6f7fb;
     // height: 90vh;

@@ -11,7 +11,7 @@ export default {
   props: {
     goback: {
       type: String,
-      default: "recommend"
+      default: "/box/recommend"
     }
   },
   data() {
@@ -28,7 +28,7 @@ export default {
   methods: {
     onclick() {
       this.Mysetback();
-      this.$router.go(-1);
+      this.$router.push(`${this.goback}`)
     }
   },
   filter: {},

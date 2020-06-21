@@ -56,6 +56,7 @@ export default {
     };
   },
   created() {
+    document.title = this.$route.meta.title
     this.info(this.$route.query.id);
     // this.info(`6545daf382c0433eaf260635833e5422`);
   },
