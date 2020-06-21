@@ -12,7 +12,7 @@ if (process.env.NODE_ENV == "development") {
   // 生产
   var BASE_URLA = "http://47.98.169.218:8083";
   // var information = "http://47.98.169.218:8090"
-  var information = "http://sign.xn--fjq0sg8h2zkivvwsonptcv2b.com/web/api:8090"
+  var information = "http://sign.xn--fjq0sg8h2zkivvwsonptcv2b.com/web/api"
 }
 window.information = information;
 window.BASE_URLA = BASE_URLA;
