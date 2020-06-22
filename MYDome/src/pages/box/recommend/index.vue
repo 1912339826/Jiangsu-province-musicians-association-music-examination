@@ -20,14 +20,16 @@
           title-style="font-weight: 600;"
         >
           <div id="content" v-if="loading" style="height:93vh;overflow: scroll;">
-            <div v-for="(item, index) in Islist" :key="index">
-              <router-link :to="{path: '/defaults', query: {id: item.id }}">
-              <!-- <a :href="'web/#/defaults?id='+item.id"> -->
-                <img :src="item.pics" alt />
-                <span>{{item.title}}</span>
-              <!-- </a> -->
-              </router-link>
+            <div class="content_box">
+              <div v-for="(item, index) in Islist" :key="index" class="list">
+                <router-link :to="{path: '/defaults', query: {id: item.id }}">
+                  <img :src="item.pics" alt />
+                  <span>{{item.title}}</span>
+                </router-link>
+              </div>
             </div>
+
+            <div class="content_bottom">没有更多了</div>
           </div>
           <div
             v-if="!loading"
@@ -43,7 +45,6 @@
   </div>
 </template>
 <script>
-// import a from '../../details/index'
 export default {
   name: "recommend",
   components: {},
@@ -55,32 +56,7 @@ export default {
       Islist: [
         {
           id: "",
-          pics:
-            "http://img0.imgtn.bdimg.com/it/u=3869576267,4119045947&fm=15&gp=0.jpg",
-          title: ""
-        },
-        {
-          id: "",
-          pics:
-            "http://img4.imgtn.bdimg.com/it/u=2697916822,1858746706&fm=26&gp=0.jpg",
-          title: ""
-        },
-        {
-          id: "",
-          pics:
-            "http://img0.imgtn.bdimg.com/it/u=3869576267,4119045947&fm=15&gp=0.jpg",
-          title: ""
-        },
-        {
-          id: "",
-          pics:
-            "http://img0.imgtn.bdimg.com/it/u=3869576267,4119045947&fm=15&gp=0.jpg",
-          title: ""
-        },
-        {
-          id: "",
-          pics:
-            "http://img0.imgtn.bdimg.com/it/u=3869576267,4119045947&fm=15&gp=0.jpg",
+          pics: "",
           title: ""
         }
       ]
@@ -104,22 +80,19 @@ export default {
     },
     // 获取列表
     async list(active) {
-      this.loading = false;
       let res = await this.$req(window.api.list, {
         catId: this.IscatList[active].id
       });
       this.Islist = res.data.result.data;
-      setTimeout(() => {
-        this.loading = true;
-      }, 300);
     }
   },
   created() {
-    console.log(
-      window.BASE_URLA + "/defaults?id=48150061895045b286f9e1fc44bdd091"
-    );
     document.title = this.$route.meta.title;
     this.catList(0);
+    this.loading = false;
+    setTimeout(() => {
+      this.loading = true;
+    }, 300);
   },
   mounted() {},
   activated() {},
@@ -128,7 +101,11 @@ export default {
   computed: {},
   watch: {
     active(news) {
-      // this.list(news);
+      this.list(news);
+      this.loading = false;
+      setTimeout(() => {
+        this.loading = true;
+      }, 300);
     }
   },
   beforeDestroy() {}
@@ -141,39 +118,49 @@ export default {
   .box {
     // padding-bottom: 10vw;
     #content {
-      width: 100%;
-      display: flex;
-      flex-wrap: wrap;
-      div {
-        background-color: white;
-        width: 45.5%;
-        height: 64vw;
-        margin-left: 3%;
-        margin-right: 3%;
-        margin-top: 2.5vw;
+      .content_box {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        .list {
+          background-color: white;
+          width: 45.5%;
+          height: 64vw;
+          margin-left: 3%;
+          margin-right: 3%;
+          margin-top: 2.5vw;
 
-        padding-top: 3vw;
-        padding-bottom: 3vw;
-        &:nth-child(even) {
-          margin-left: 0%;
+          padding-top: 3vw;
+          padding-bottom: 3vw;
+          &:nth-child(even) {
+            margin-left: 0%;
+          }
+          a {
+            color: #000;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            align-items: center;
+          }
+          img {
+            width: 70%;
+          }
+          span {
+            display: block;
+            width: 95%;
+            line-height: 5.5vw;
+            margin-top: 3vw;
+            font-size: 0.3rem;
+          }
         }
-        a {
-          color: #000;
-          display: flex;
-          justify-content: space-between;
-          flex-direction: column;
-          align-items: center;
-        }
-        img {
-          width: 70%;
-        }
-        span {
-          display: block;
-          width: 95%;
-          line-height: 5.5vw;
-          margin-top: 3vw;
-          font-size: 0.3rem;
-        }
+      }
+      .content_bottom {
+        color: #969799;
+        text-align: center;
+        font-size: 0.3rem;
+        height: 10vw;
+        line-height: 10vw;
+        margin-top: 3vw;
       }
     }
   }

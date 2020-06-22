@@ -35,7 +35,6 @@ export default new Router({
       name: 'box',
       component: box,
       meta: {
-        KeepAlive: false,
         title: ''
       },
       children: [{
@@ -43,7 +42,7 @@ export default new Router({
           name: 'home',
           component: home,
           meta: {
-            KeepAlive: false,
+  
             title: ''
           },
         },
@@ -52,7 +51,7 @@ export default new Router({
           name: 'recommend',
           component: recommend,
           meta: {
-            KeepAlive: false,
+  
             title: '指定教材'
           },
         }, {
@@ -60,7 +59,7 @@ export default new Router({
           name: 'my',
           component: my,
           meta: {
-            KeepAlive: false,
+  
             title: ''
           },
         }
@@ -72,7 +71,6 @@ export default new Router({
       name: 'defaults',
       component: defaults,
       meta: {
-        KeepAlive: false,
         title: '指定教材'
       },
     },
@@ -81,7 +79,6 @@ export default new Router({
       name: 'information',
       component: information,
       meta: {
-        KeepAlive: false,
         title: '音乐资讯'
       },
     }, {
@@ -89,7 +86,6 @@ export default new Router({
       name: 'TestInstructions',
       component: TestInstructions,
       meta: {
-        KeepAlive: false,
         title: '考试须知'
       },
     }, {
@@ -97,7 +93,6 @@ export default new Router({
       name: 'FlowPath',
       component: FlowPath,
       meta: {
-        KeepAlive: false,
         title: '考级指南'
       },
     },
@@ -106,7 +101,6 @@ export default new Router({
       name: 'informationDetail',
       component: informationDetail,
       meta: {
-        KeepAlive: false,
         title: '音乐资讯'
       },
     },
@@ -115,7 +109,6 @@ export default new Router({
       name: 'FlowPathDetail',
       component: FlowPathDetail,
       meta: {
-        KeepAlive: false,
         title: '考级指南'
       },
     },
@@ -124,7 +117,6 @@ export default new Router({
       name: 'ContactUs',
       component: ContactUs,
       meta: {
-        KeepAlive: false,
         title: '联系我们'
       },
     },
@@ -133,7 +125,6 @@ export default new Router({
       name: 'PrivacyPolicy',
       component: PrivacyPolicy,
       meta: {
-        KeepAlive: false,
         title: '隐私政策'
       },
     }

@@ -18,6 +18,8 @@ let removePending = ele => {
 
 axios.defaults.timeout = 60000;
 axios.defaults.withCredentials = true
+
+
 axios.interceptors.request.use(config => {
   // 此处对请求的header进行配置
   // let cookies = Tools.getCookies(`${appConfig.simpleName}_access_token`) || {};
@@ -45,9 +47,13 @@ axios.interceptors.request.use(config => {
 
 
   }
-
+  // 添加org参数
+  if ((typeof window.MYS.$route.query.org) != 'undefined' && window.development) {
+    config.headers['org'] = window.MYS.$route.query.org
+  }
+  config.headers['Access-Control-Allow-Origin'] = 'http://47.110.228.211/';
   config.headers['Content-Type'] = config.headers['Content-Type'] ? config.headers['Content-Type'] : 'application/x-www-form-urlencoded;charset=UTF-8';
-
+  
 
   return config;
 });

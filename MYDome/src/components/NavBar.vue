@@ -28,7 +28,8 @@ export default {
   methods: {
     onclick() {
       this.Mysetback();
-      this.$router.push(`${this.goback}`)
+      // this.$router.push(`${this.goback}`)
+      this.$router.go(-1)
     }
   },
   filter: {},

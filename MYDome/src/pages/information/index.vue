@@ -20,7 +20,7 @@
           :key="index.name"
           title-style="font-weight: 600;"
         >
-          <div v-if="loading" style="height:85vh;overflow: scroll;">
+          <div v-if="loading" style="height:93vh;overflow: scroll;">
             <van-list
               v-model="loadinglist"
               :finished="finished"
@@ -51,7 +51,7 @@
           </div>
           <div
             v-if="!loading"
-            style="width:100%;height:75vh;display: flex;
+            style="width:100%;height:93vh;display: flex;
     justify-content: center; align-items: center;"
           >
             <van-loading size="20vw" />

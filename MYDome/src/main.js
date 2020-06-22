@@ -33,6 +33,10 @@ new Vue({
   components: {
     App
   },
+  created() {
+    // 设定全局this
+    window.MYS = this
+  },
   template: '<App/>'
 })
 router.beforeEach((to, from, next) => {
@@ -52,7 +56,6 @@ Vue.prototype.Mysetback = function () {
 
   var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
   if (isAndroid) {
-    alert('ss')
     //如果为Android
     window.android.closePage();
   }

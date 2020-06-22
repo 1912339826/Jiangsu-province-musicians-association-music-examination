@@ -19,7 +19,8 @@ export default {
       ]
     };
   },
-  created() {},
+  created() {
+  },
   mounted() {},
   activated() {},
   update() {},
