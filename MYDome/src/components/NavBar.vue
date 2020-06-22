@@ -28,8 +28,11 @@ export default {
   methods: {
     onclick() {
       this.Mysetback();
-      // this.$router.push(`${this.goback}`)
-      this.$router.go(-1)
+      this.$router.push({
+        path: `/box/recommend`,
+        query: { org: this.$route.query.org }
+      });
+      // this.$router.go(-1)
     }
   },
   filter: {},

@@ -94,7 +94,6 @@ export default {
     }
   },
   created() {
-    this.org = this.$route.query.org;
     document.title = this.$route.meta.title;
     this.catList(0);
     this.loading = false;
