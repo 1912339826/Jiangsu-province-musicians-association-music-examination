@@ -21,11 +21,16 @@
         >
           <div id="content" v-if="loading" style="height:93vh;overflow: scroll;">
             <div class="content_box">
-              <div v-for="(item, index) in Islist" :key="index" class="list">
-                <router-link :to="{path: '/defaults', query: {id: item.id }}">
-                  <img :src="item.pics" alt />
-                  <span>{{item.title}}</span>
-                </router-link>
+              <div
+                v-for="(item, index) in Islist"
+                :key="index"
+                class="list"
+                @click="defaultClick(item.id)"
+              >
+                <!-- <router-link :to="{name: 'defaults', params: {id: item.id ,org:org}}"> -->
+                <img :src="item.pics" alt />
+                <span>{{item.title}}</span>
+                <!-- </router-link> -->
               </div>
             </div>
 
@@ -59,7 +64,8 @@ export default {
           pics: "",
           title: ""
         }
-      ]
+      ],
+      org: ""
     };
   },
   methods: {
@@ -68,7 +74,8 @@ export default {
       this.$router.push({
         path: "/defaults",
         query: {
-          id: e
+          id: e,
+          org: this.$route.query.org
         }
       });
     },
@@ -87,6 +94,7 @@ export default {
     }
   },
   created() {
+    this.org = this.$route.query.org;
     document.title = this.$route.meta.title;
     this.catList(0);
     this.loading = false;
@@ -129,18 +137,22 @@ export default {
           margin-left: 3%;
           margin-right: 3%;
           margin-top: 2.5vw;
-
+          color: #000;
+          display: flex;
+          justify-content: space-between;
+          flex-direction: column;
+          align-items: center;
           padding-top: 3vw;
           padding-bottom: 3vw;
           &:nth-child(even) {
             margin-left: 0%;
           }
           a {
-            color: #000;
-            display: flex;
-            justify-content: space-between;
-            flex-direction: column;
-            align-items: center;
+            // color: #000;
+            // display: flex;
+            // justify-content: space-between;
+            // flex-direction: column;
+            // align-items: center;
           }
           img {
             width: 70%;

@@ -13,7 +13,7 @@ import defaults from '../pages/details/index.vue'
 import information from '../pages/information/index.vue'
 // 音乐资讯详情
 import informationDetail from '../pages/information/informationDetail/index.vue'
-// 考试须知
+// 考级简章
 import TestInstructions from '../pages/TestInstructions/index.vue'
 // 考试流程
 import FlowPath from '../pages/FlowPath/index.vue'
@@ -86,7 +86,7 @@ export default new Router({
       name: 'TestInstructions',
       component: TestInstructions,
       meta: {
-        title: '考试须知'
+        title: '考级简章'
       },
     }, {
       path: '/FlowPath',
