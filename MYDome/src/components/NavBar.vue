@@ -27,7 +27,7 @@ export default {
   update() {},
   methods: {
     onclick() {
-      this.Mysetback();
+      // this.Mysetback();
       this.$router.push({
         path: `/box/recommend`,
         query: { org: this.$route.query.org }

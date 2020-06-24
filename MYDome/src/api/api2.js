@@ -1,7 +1,7 @@
 if (process.env.NODE_ENV == "development") {
   // 开发
   window.development = false
-  var BASE_URLA = "http://47.98.169.218:8083";
+  var BASE_URLA = "http://47.110.228.211:8083/api";
   var information = "http://47.98.169.218:8090"
 } else if (process.env.NODE_ENV == "debug") {
   // debug
@@ -40,5 +40,5 @@ export default {
   // 获取考试流程详情
   getProcessInfo: `${BASE_URLA}/exam/process/getProcessInfo`,
   // 联系我们 
-  contact: `${BASE_URLA}/contact/us/search`,
+  contact: `${BASE_URLA}/contact/info`,
 };

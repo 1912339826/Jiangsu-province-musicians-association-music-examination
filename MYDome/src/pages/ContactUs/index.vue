@@ -1,7 +1,8 @@
 <template>
   <div id="ContactUs">
     <!-- <NavBar style="position: fixed;top:0;"/> -->
-    <div style="padding-top: 3vw;">
+    <div v-html="html"></div>
+    <!-- <div style="padding-top: 3vw;">
       <span>地址:</span>
       <span>{{Iscontact.address}}</span>
     </div>
@@ -20,7 +21,7 @@
       <span>
         <a :href="'mailto:' + Iscontact.mailbox">{{Iscontact.mailbox}}</a>
       </span>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -34,7 +35,8 @@ export default {
   props: {},
   data() {
     return {
-      Iscontact: {}
+      Iscontact: {},
+      html:''
     };
   },
   created() {
@@ -49,8 +51,11 @@ export default {
   methods: {
     // 联系我们
     async contact() {
-      let res = await this.$req(window.api.contact, {});
-      this.Iscontact = res.data.result[0];
+      let res = await this.$req(window.api.contact, {
+        id:1
+      });
+      this.Iscontact = res.data.result;
+      this.html = res.data.result.content
     }
   },
   filters: {},
@@ -72,6 +77,12 @@ export default {
   }
   a {
     text-decoration: underline;
+  }
+  /deep/p{
+    font-size: 0.4rem;
+    line-height: 10vw;
+    padding-right: 3vw;
+    padding-left: 3vw;
   }
 }
 </style>
