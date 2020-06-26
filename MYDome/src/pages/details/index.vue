@@ -26,7 +26,7 @@
         <pre v-html="Isinfo.content"></pre>
       </div>
     </section>
-    <div class="Isbottom">
+    <div class="Isbottom" v-if="Isinfo.link!=''">
       <div @click="goback">
         <img src="../../../static/images/链接_03.png" alt />
         <span>购买链接</span>
