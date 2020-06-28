@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import NavBar from '../../components/NavBar'
+import NavBar from "../../components/NavBar";
 export default {
   name: "TestInstructions",
   components: {
@@ -19,16 +19,16 @@ export default {
   data() {
     return {
       test: ``,
-      title:''
+      title: ""
     };
   },
   created() {
-    document.title = this.$route.meta.title
-    this.getNotes()
+    document.title = this.$route.meta.title;
+    this.getNotes();
   },
   mounted() {},
   activated() {
-    this.getNotes()
+    this.getNotes();
   },
   methods: {
     // 获取考试须知
@@ -36,12 +36,10 @@ export default {
       let res = await this.$req(window.api.getNotes, {});
       this.test = res.data.result[0].content;
       this.title = res.data.result[0].subtitle;
-      
-    },
+    }
   },
   watch: {},
-  beforeDestroy(){
-  }
+  beforeDestroy() {}
 };
 </script>
 
@@ -52,7 +50,7 @@ export default {
     background-color: #ffffff;
     border-top: 1px solid #f6f7fb;
     // height: 90vh;
-  
+
     pre {
       padding-top: 2vw;
       padding-right: 3vw;
@@ -60,6 +58,11 @@ export default {
       font-size: 0.25rem;
       line-height: 8vw;
       // padding-bottom: 10vw;
+      /deep/ p {
+        img {
+          width: 100%;
+        }
+      }
     }
   }
 }
