@@ -22,20 +22,22 @@ export default {
       title: ""
     };
   },
+  watch: {
+  },
   created() {
     document.title = this.$route.meta.title;
     this.getNotes();
   },
-  mounted() {},
-  activated() {
-    this.getNotes();
+  mounted() {
   },
   methods: {
     // 获取考试须知
     async getNotes() {
       let res = await this.$req(window.api.getNotes, {});
-      this.test = res.data.result[0].content;
-      this.title = res.data.result[0].subtitle;
+      let test = '';
+      test = res.data.result[0].content;
+      this.title = res.data.result[0].title;
+      this.test = test.replace(/\s/g,"")
     }
   },
   watch: {},
@@ -59,6 +61,7 @@ export default {
       line-height: 8vw;
       // padding-bottom: 10vw;
       /deep/ p {
+        text-indent:0.5rem;
         img {
           width: 100%;
         }
