@@ -48,9 +48,9 @@ axios.interceptors.request.use(config => {
 
   }
   // 添加org参数
-  if ((typeof window.MYS.$route.query.org) != 'undefined' && window.development) {
-    config.headers['org'] = window.MYS.$route.query.org
-  }
+  // if ((typeof window.MYS.$route.query.org) != 'undefined' && window.development) {
+  //   config.headers['org'] = window.MYS.$route.query.org
+  // }
   config.headers['Access-Control-Allow-Origin'] = 'http://47.110.228.211/';
   config.headers['Content-Type'] = config.headers['Content-Type'] ? config.headers['Content-Type'] : 'application/x-www-form-urlencoded;charset=UTF-8';
 
@@ -127,115 +127,3 @@ export default function (url, data) {
       });
   };
 }
-
-
-
-
-
-
-// export let req = {
-//     // imgUrl: 'http://sign.xn--fjq0sg8h2zkivvwsonptcv2b.com',
-//     imgUrl: setting.apiBaseURL,
-//     // 'http://47.98.169.218:8085', // 测试环境
-//     // 生产环境
-//     domain: setting.imageBaseURL,
-//     get: function (url, params, callback) {
-//       var me = this
-//       url = me.domain + url
-//       axios({
-//         url: url,
-//         method: 'get',
-//         params: params,
-//       }).then(function (response) {
-//         if (response.status === 401 || response.status === 403) {
-//         // 处理401，403
-//         //   window.Global.removeLocalStorage('token');
-//         //   router.push({name:"Login"})
-//         } else {
-//           if (typeof (callback) === 'function') {
-//             callback(response)
-//           }
-//         }
-//       }).catch(function (error) {
-
-//       })
-//     },
-//     post: function (url, params, callback) {
-//       var me = this;
-//       url = me.domain + url;
-//       axios({
-//         url: url,
-//         method: 'post',
-//         data: params,
-//         transformRequest: [function (data) {
-//           let ret = ''
-//           for (let it in data) {
-//             ret += encodeURIComponent(it) + '=' + encodeURIComponent(data[it]) + '&'
-//           }
-//           return ret
-//         }]
-//       }).then(function (response) {
-//         if (response.status == 401 || response.status == 403) {
-//         //   window.Global.removeLocalStorage('token');
-//         //   router.push({name:"Login"})
-//         } else {
-//           if (typeof (callback) === 'function') {
-//             callback(response)
-//           }
-//         }
-//       }).catch(function (error) {
-
-//       })
-//     },
-//     upload: function (url, params, callback) {
-//       var me = this
-//       url = me.domain + url
-//       axios({
-//         url: url,
-//         method: 'post',
-//         data: params,
-//         'Content-Type': 'multipart/form-data'
-//       }).then(function (response) {
-//         if (typeof (callback) === 'function') {
-//           callback(response)
-//         }
-//       }).catch(function (error) {
-//         var rs = error.response.data
-//         if (rs.status === false) {
-//           window.Global.removeLocalStorage('token')
-//           // window.location.reload()
-//         }
-//       })
-//     },
-
-//     checkToken() {
-//       if (window.Global.getLocalStorage('token')) {
-//         let tokend = window.Global.getLocalStorage('token')
-//         window.Global.post("wechat/user/checkToken", {
-//           token: tokend
-//         }, rs => {
-//           console.log("checkToken", tokend, rs.data.success)
-//           // 测试判断
-//           if (rs.data.success == false) {
-
-//             // window.Global.removeLocalStorage('token')
-//             // router.push({name:"Login"})
-//           } else {
-//             // router.push({name:"sign"})
-//           }
-//         })
-//       } else {
-//         // window.Global.removeLocalStorage('token')
-//         // router.push({name:"Login"})
-//       }
-//     },
-//     setLocalStorage: function (name, token) {
-//       window.localStorage.setItem(name, token)
-//     },
-//     getLocalStorage: function (name) {
-//       return window.localStorage.getItem(name)
-//     },
-//     removeLocalStorage: function (name) {
-//       window.localStorage.removeItem(name)
-//     }
-//   }

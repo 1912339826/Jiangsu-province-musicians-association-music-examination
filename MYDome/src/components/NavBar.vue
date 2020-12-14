@@ -30,7 +30,7 @@ export default {
       // this.Mysetback();
       this.$router.push({
         path: `/box/recommend`,
-        query: { org: this.$route.query.org }
+        // query: { org: this.$route.query.org }
       });
       // this.$router.go(-1)
     }

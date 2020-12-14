@@ -9,7 +9,7 @@ import recommend from '../pages/box/recommend/index.vue'
 import my from '../pages/box/my/index.vue'
 // 教材详情
 import defaults from '../pages/details/index.vue'
-// 音乐资讯
+// 音乐资讯 
 import information from '../pages/information/index.vue'
 // 音乐资讯详情
 import informationDetail from '../pages/information/informationDetail/index.vue'
