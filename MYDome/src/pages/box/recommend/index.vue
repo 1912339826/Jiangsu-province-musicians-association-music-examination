@@ -75,7 +75,7 @@ export default {
         path: "/defaults",
         query: {
           id: e,
-          // org: this.$route.query.org
+          org: this.$route.query.org
         }
       });
     },

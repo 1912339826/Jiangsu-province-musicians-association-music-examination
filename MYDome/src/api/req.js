@@ -48,9 +48,9 @@ axios.interceptors.request.use(config => {
 
   }
   // 添加org参数
-  // if ((typeof window.MYS.$route.query.org) != 'undefined' && window.development) {
-  //   config.headers['org'] = window.MYS.$route.query.org
-  // }
+  if ((typeof window.MYS.$route.query.org) != 'undefined' && window.development) {
+    config.headers['org'] = window.MYS.$route.query.org
+  }
   config.headers['Access-Control-Allow-Origin'] = 'http://47.110.228.211/';
   config.headers['Content-Type'] = config.headers['Content-Type'] ? config.headers['Content-Type'] : 'application/x-www-form-urlencoded;charset=UTF-8';
 
