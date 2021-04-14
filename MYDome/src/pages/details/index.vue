@@ -1,6 +1,6 @@
 <template>
   <div id="details">
-    <NavBar style="position: fixed;top:0;" />
+    <NavBar style="position: fixed; top: 0" />
     <section class="box">
       <div class="top">
         <img :src="Isinfo.pics" alt />
@@ -9,29 +9,50 @@
         <div>
           <img src="../../../static/images/教材详情_作者.png" alt />
           <span>作者</span>
-          <span>{{Isinfo.author}}</span>
+          <span>{{ Isinfo.author }}</span>
         </div>
         <div>
           <img src="../../../static/images/教材详情_类型.png" alt />
           <span>类型</span>
-          <span>{{Isinfo.type}}</span>
+          <span>{{ Isinfo.type }}</span>
         </div>
         <div>
           <img src="../../../static/images/教材详情_版本.png" alt />
           <span>版本</span>
-          <span>{{Isinfo.version}}</span>
+          <span>{{ Isinfo.version }}</span>
         </div>
       </div>
       <div class="content">
         <pre v-html="Isinfo.content"></pre>
       </div>
     </section>
-    <div class="Isbottom" v-if="Isinfo.link!=''">
-      <div @click="goback">
-        <img src="../../../static/images/链接_03.png" alt />
-        <span>购买链接</span>
+
+    <template v-if="Isinfo.link != '' && Isinfo.sheetMusicUrl != null">
+      <div class="Isbottom">
+        <div @click="goback" class="goback goback_link">
+          <img src="../../../static/images/链接_03.png" alt />
+          <span>购买链接</span>
+        </div>
+        <div @click="look" class="look link_look">
+          <div class="text">查看琴谱</div>
+        </div>
       </div>
-    </div>
+    </template>
+    <template v-if="Isinfo.link == '' && Isinfo.sheetMusicUrl != null">
+      <div class="Isbottom">
+        <div @click="look" class="look">
+          <div class="text">查看琴谱</div>
+        </div>
+      </div>
+    </template>
+    <template v-if="Isinfo.link != '' && Isinfo.sheetMusicUrl == null">
+      <div class="Isbottom">
+        <div @click="goback" class="goback">
+          <img src="../../../static/images/链接_03.png" alt />
+          <span>购买链接</span>
+        </div>
+      </div>
+    </template>
   </div>
 </template>
 
@@ -40,7 +61,7 @@ import NavBar from "../../components/NavBar";
 export default {
   name: "detail",
   components: {
-    NavBar
+    NavBar,
   },
   props: {},
   data() {
@@ -51,8 +72,9 @@ export default {
         version: "",
         link: "",
         pics: `http://img0.imgtn.bdimg.com/it/u=3869576267,4119045947&fm=15&gp=0.jpg`,
-        content: ""
-      }
+        content: "",
+        sheetMusicUrl: "",
+      },
     };
   },
   created() {
@@ -64,23 +86,26 @@ export default {
   activated() {},
   update() {},
   methods: {
+    look() {
+      window.location.href = this.Isinfo.sheetMusicUrl;
+    },
     // 详情
     async info(id) {
       let obj = {};
       let res = await this.$req(window.api.info, {
-        id: id
+        id: id,
       });
       obj = res.data.result;
       this.Isinfo = obj;
     },
     goback() {
       window.location.href = this.Isinfo.link;
-    }
+    },
   },
   filter: {},
   computed: {},
   watch: {},
-  beforeDestroy() {}
+  beforeDestroy() {},
 };
 </script>
 
@@ -131,6 +156,7 @@ export default {
       }
     }
   }
+
   .Isbottom {
     width: 100%;
     position: fixed;
@@ -145,11 +171,8 @@ export default {
     -webkit-box-shadow: 0px -1vw 2px #eeeeee;
     box-shadow: 0px -1vw 2px #eeeeee;
     background-color: #ffffff;
-    img {
-      width: 5vw;
-      margin-right: 2vw;
-    }
-    div {
+
+    .goback {
       width: 80%;
       height: 8vw;
       background-image: linear-gradient(#0bb908, #119c0f);
@@ -157,6 +180,36 @@ export default {
       align-items: center;
       justify-content: center;
       border-radius: 3.5vw;
+
+      img {
+        width: 5vw;
+        margin-right: 2vw;
+      }
+    }
+
+    .goback_link {
+      width: 40%;
+      border-radius: 0;
+      border-top-left-radius: 3.5vw;
+      border-bottom-left-radius: 3.5vw;
+    }
+
+    .look {
+      width: 80%;
+      height: 8vw;
+      background-image: linear-gradient(#0bb908, #119c0f);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 3.5vw;
+      font-size: 0.3rem;
+    }
+
+    .link_look {
+      width: 40%;
+      border-radius: 0;
+      border-top-right-radius: 3.5vw;
+      border-bottom-right-radius: 3.5vw;
     }
   }
 }
