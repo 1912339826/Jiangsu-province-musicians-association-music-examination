@@ -51,8 +51,7 @@ axios.interceptors.request.use(config => {
   if ((typeof window.MYS.$route.query.org) != 'undefined' && window.development) {
     config.headers['org'] = window.MYS.$route.query.org
   }
-  // config.headers['org'] = 1;
-  config.headers['Access-Control-Allow-Origin'] = 'http://47.110.228.211/';
+  config.headers['Access-Control-Allow-Origin'] = 'http://124.70.192.209/';
   config.headers['Content-Type'] = config.headers['Content-Type'] ? config.headers['Content-Type'] : 'application/x-www-form-urlencoded;charset=UTF-8';
 
 
