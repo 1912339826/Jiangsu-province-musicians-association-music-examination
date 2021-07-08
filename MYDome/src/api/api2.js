@@ -5,8 +5,8 @@ if (process.env.NODE_ENV == "development") {
   // var information = "http://47.98.169.218:8090"
   // var BASE_URLA = "http://dev.qiahaochaoshi.com/api";
   // var information = "http://dev.qiahaochaoshi.com/web/api"
-  var BASE_URLA = "http://192.168.5.157:8084/api";
-  var information = "http://192.168.5.157:8084"
+  var BASE_URLA = "http://192.168.5.190:8083/api";
+  var information = "http://192.168.5.190:8083"
 } else if (process.env.NODE_ENV == "debug") {
   // debug
   var BASE_URLA = "http://47.98.169.218:8083";
@@ -14,10 +14,10 @@ if (process.env.NODE_ENV == "development") {
 } else if (process.env.NODE_ENV == "production") {
   // 生产
   window.development = true
-  // var BASE_URLA = "http://sign.xn--fjq0sg8h2zkivvwsonptcv2b.com/api";
-  // var information = "http://sign.xn--fjq0sg8h2zkivvwsonptcv2b.com/web/api"
-  var BASE_URLA = "http://dev.qiahaochaoshi.com/api";
-  var information = "http://dev.qiahaochaoshi.com/web/api"
+  var BASE_URLA = "http://sign.xn--fjq0sg8h2zkivvwsonptcv2b.com/api";
+  var information = "http://sign.xn--fjq0sg8h2zkivvwsonptcv2b.com/web/api"
+  // var BASE_URLA = "http://dev.qiahaochaoshi.com/api";
+  // var information = "http://dev.qiahaochaoshi.com/web/api"
 }
 window.information = information;
 // window.BASE_URLA = BASE_URLA;

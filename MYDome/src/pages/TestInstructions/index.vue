@@ -2,8 +2,9 @@
   <div id="TestInstructions">
     <!-- <NavBar style="position: fixed;top:0;"/> -->
     <section class="box">
-      <p style="text-align: center;font-size: 0.28rem;padding-top: 3vw;margin-top: 3vw;">{{title}}</p>
+      <!-- <p style="text-align: center;font-size: 0.28rem;padding-top: 3vw;margin-top: 3vw;">{{title}}</p> -->
       <pre v-html="test"></pre>
+      
     </section>
   </div>
 </template>
@@ -19,7 +20,7 @@ export default {
   data() {
     return {
       test: ``,
-      title: ""
+      title: ``
     };
   },
   watch: {
@@ -37,7 +38,8 @@ export default {
       let test = '';
       test = res.data.result[0].content;
       this.title = res.data.result[0].title;
-      this.test = test.replace(/\s/g,"")
+      // this.test = test.replace(/\s/g,"")
+      this.test = test;
     }
   },
   watch: {},
@@ -61,7 +63,7 @@ export default {
       line-height: 8vw;
       // padding-bottom: 10vw;
       /deep/ p {
-        text-indent:0.5rem;
+        // text-indent:0.5rem;
         img {
           width: 100%;
         }
